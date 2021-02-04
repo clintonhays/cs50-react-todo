@@ -23,13 +23,27 @@ class App extends Component {
     });
   }
 
+  toggleTodo(id) {
+    this.setState({
+      todos: this.state.todos.map((todo) => {
+        if (todo.id !== id) return todo;
+        else {
+          return { id: todo.id, text: todo.text, checked: !todo.checked };
+        }
+      }),
+    });
+  }
+
   render() {
     const { todos } = this.state;
 
     return (
       <div>
         <div className="totalTodos">Items: {todos.length}</div>
-        <div className="unfinishedTodos">Completed: unchecked</div>
+        <div className="unfinishedTodos">
+          Unfinished:
+          {todos.filter((todo) => todo.checked === false).length}
+        </div>
         <button
           className="addTodo"
           onClick={() => {
@@ -45,6 +59,9 @@ class App extends Component {
               todo={todo}
               onDelete={() => {
                 this.deleteTodo(todo.id);
+              }}
+              onToggle={() => {
+                this.toggleTodo(todo.id);
               }}
             />
           ))}
