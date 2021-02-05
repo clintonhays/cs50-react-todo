@@ -4,7 +4,7 @@ const Todo = (props) => {
   return (
     <li>
       <p>{props.todo.text}</p>
-      <input type="checkbox" onClick={props.onToggle} />
+      <button onClick={props.onToggle}>Finished</button>
       <button onClick={props.onDelete}>Delete</button>
     </li>
   );

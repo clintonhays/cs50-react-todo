@@ -1,29 +1,26 @@
-import React, { Component } from "react";
+import React, { Component, useRef, useState } from "react";
 import Todo from "./Todo";
 import "../css/styles.css";
 
 let id = 0;
 
-class App extends Component {
-  state = {
-    todos: [],
-  };
+const App = () => {
+  const [todos, setTodos] = useState([]);
+  const todoText = useRef("");
 
-  addTodo() {
+  const addTodo = () => {
     const text = prompt("What would you like to do?");
 
-    this.setState({
-      todos: [...this.state.todos, { id: id++, text: text, checked: false }],
+    setTodos((prevState) => {
+      return [...prevState, { id: id++, text: text, checked: false }];
     });
-  }
+  };
 
-  deleteTodo(id) {
-    this.setState({
-      todos: this.state.todos.filter((todo) => todo.id !== id),
-    });
-  }
+  const deleteTodo = (id) => {
+    todos.filter((todo) => todo.id !== id);
+  };
 
-  toggleTodo(id) {
+  const toggleTodo = (id) => {
     this.setState({
       todos: this.state.todos.map((todo) => {
         if (todo.id !== id) return todo;
@@ -32,43 +29,54 @@ class App extends Component {
         }
       }),
     });
-  }
+  };
 
-  render() {
-    const { todos } = this.state;
-
-    return (
-      <div>
-        <div className="totalTodos">Items: {todos.length}</div>
-        <div className="unfinishedTodos">
-          Unfinished:
-          {todos.filter((todo) => todo.checked === false).length}
-        </div>
-        <button
-          className="addTodo"
-          onClick={() => {
-            this.addTodo();
-          }}
-        >
-          Add Todo
-        </button>
-        <ul className="todoList">
-          {todos.map((todo) => (
-            <Todo
-              key={todo.id}
-              todo={todo}
-              onDelete={() => {
-                this.deleteTodo(todo.id);
-              }}
-              onToggle={() => {
-                this.toggleTodo(todo.id);
-              }}
-            />
-          ))}
-        </ul>
+  return (
+    <div>
+      <div className="totalTodos">Items: {todos.length}</div>
+      <div className="unfinishedTodos">
+        Unfinished:
+        {todos.filter((todo) => todo.checked === false).length}
       </div>
-    );
-  }
-}
+      {/* <label htmlFor="todoInput">What would you like to do?</label>
+      <input type="text" name="todoInput" id="todoInput" placeholder="add your task" ref={todoText} /> */}
+      <button className="addTodo" onClick={addTodo}>
+        Add Todo
+      </button>
+      <ul className="todoList">
+        {todos.map((todo) => (
+          <Todo
+            key={todo.id}
+            todo={todo}
+            onDelete={deleteTodo(todo.id)}
+            onToggle={() => {
+              this.toggleTodo(todo.id);
+            }}
+          />
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+// const App = () => {
+//   const [count, setCount] = useState(4);
+
+//   const decrementCount = () => {
+//     setCount((prevCount) => prevCount - 1);
+//   };
+
+//   const incrementCount = () => {
+//     setCount((prevCount) => prevCount + 1);
+//   };
+
+//   return (
+//     <div>
+//       <button onClick={decrementCount}>-</button>
+//       <span>{count}</span>
+//       <button onClick={incrementCount}>+</button>
+//     </div>
+//   );
+// };
 
 export default App;
