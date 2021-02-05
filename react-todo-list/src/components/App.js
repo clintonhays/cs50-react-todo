@@ -17,7 +17,7 @@ const App = () => {
   };
 
   const deleteTodo = (id) => {
-    todos.filter((todo) => todo.id !== id);
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   const toggleTodo = (id) => {
@@ -48,7 +48,9 @@ const App = () => {
           <Todo
             key={todo.id}
             todo={todo}
-            onDelete={deleteTodo(todo.id)}
+            onDelete={() => {
+              deleteTodo(todo.id);
+            }}
             onToggle={() => {
               this.toggleTodo(todo.id);
             }}
@@ -60,10 +62,10 @@ const App = () => {
 };
 
 // const App = () => {
-//   const [count, setCount] = useState(4);
+//   const [count, setCount] = useState([1, 2, 3, 4]);
 
 //   const decrementCount = () => {
-//     setCount((prevCount) => prevCount - 1);
+//     setCount((prevState) => prevState.push("a"));
 //   };
 
 //   const incrementCount = () => {
