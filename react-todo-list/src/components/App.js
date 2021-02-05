@@ -21,14 +21,14 @@ const App = () => {
   };
 
   const toggleTodo = (id) => {
-    this.setState({
-      todos: this.state.todos.map((todo) => {
+    setTodos(
+      todos.map((todo) => {
         if (todo.id !== id) return todo;
         else {
           return { id: todo.id, text: todo.text, checked: !todo.checked };
         }
-      }),
-    });
+      })
+    );
   };
 
   return (
@@ -52,7 +52,7 @@ const App = () => {
               deleteTodo(todo.id);
             }}
             onToggle={() => {
-              this.toggleTodo(todo.id);
+              toggleTodo(todo.id);
             }}
           />
         ))}
