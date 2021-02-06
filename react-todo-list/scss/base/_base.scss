@@ -1,22 +1,30 @@
+// General
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+// Body
+
 body {
   margin: 0;
   padding: 0;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 100%;
-  background-color: #fffffa;
+  background-color: rgb(255, 255, 250);
 }
+
+// Buttons
 
 button {
   border: none;
   padding: 1em;
   cursor: pointer;
 }
+
+// Headers
 
 h1,
 h2,
@@ -26,4 +34,3 @@ h5,
 h6 {
   font-size: 1em;
 }
-/*# sourceMappingURL=styles.css.map */

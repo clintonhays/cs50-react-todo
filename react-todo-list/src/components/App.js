@@ -61,36 +61,4 @@ const App = () => {
   );
 };
 
-// const App = () => {
-//   const [count, setCount] = useState(4);
-
-//   const decrementCount = () => {
-//     setCount((prevCount) => prevCount - 1);
-//   };
-
-//   const incrementCount = () => {
-//     setCount((prevCount) => prevCount + 1);
-//   };
-
-//   return (
-//     <div>
-//       <button onClick={decrementCount}>-</button>
-//       <span>{count}</span>
-//       <button onClick={incrementCount}>+</button>
-//     </div>
-//   );
-// };
-
-// const App = () => {
-//   const [name, setName] = useState("");
-//   const inputRef = useRef();
-
-//   return (
-//     <div>
-//       <input ref={inputRef} value={name} onChange={(e) => setName(e.target.value)} />
-//       <div>My Name is {name}</div>
-//     </div>
-//   );
-// };
-
 export default App;
