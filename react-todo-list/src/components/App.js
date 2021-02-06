@@ -1,19 +1,19 @@
-import React, { Component, useRef, useState } from "react";
+import React, { useState, useRef } from "react";
 import Todo from "./Todo";
+import { v4 as uuidv4 } from "uuid";
 import "../css/styles.css";
-
-let id = 0;
 
 const App = () => {
   const [todos, setTodos] = useState([]);
-  const todoText = useRef("");
+  const todoInput = useRef("");
 
   const addTodo = () => {
-    const text = prompt("What would you like to do?");
-
+    const todoText = todoInput.current.value;
+    if (todoText === "") return;
     setTodos((prevState) => {
-      return [...prevState, { id: id++, text: text, checked: false }];
+      return [...prevState, { id: uuidv4(), text: todoText, checked: false }];
     });
+    todoInput.current.value = null;
   };
 
   const deleteTodo = (id) => {
@@ -38,8 +38,8 @@ const App = () => {
         Unfinished:
         {todos.filter((todo) => todo.checked === false).length}
       </div>
-      {/* <label htmlFor="todoInput">What would you like to do?</label>
-      <input type="text" name="todoInput" id="todoInput" placeholder="add your task" ref={todoText} /> */}
+      <label htmlFor="todoInput">What would you like to do?</label>
+      <input type="text" name="todoInput" id="todoInput" placeholder="add your task" ref={todoInput} />
       <button className="addTodo" onClick={addTodo}>
         Add Todo
       </button>
@@ -62,10 +62,10 @@ const App = () => {
 };
 
 // const App = () => {
-//   const [count, setCount] = useState([1, 2, 3, 4]);
+//   const [count, setCount] = useState(4);
 
 //   const decrementCount = () => {
-//     setCount((prevState) => prevState.push("a"));
+//     setCount((prevCount) => prevCount - 1);
 //   };
 
 //   const incrementCount = () => {
@@ -77,6 +77,18 @@ const App = () => {
 //       <button onClick={decrementCount}>-</button>
 //       <span>{count}</span>
 //       <button onClick={incrementCount}>+</button>
+//     </div>
+//   );
+// };
+
+// const App = () => {
+//   const [name, setName] = useState("");
+//   const inputRef = useRef();
+
+//   return (
+//     <div>
+//       <input ref={inputRef} value={name} onChange={(e) => setName(e.target.value)} />
+//       <div>My Name is {name}</div>
 //     </div>
 //   );
 // };
