@@ -1,20 +1,18 @@
 import React from "react";
 import Todo from "./Todo";
 
-const TodoList = ({ todos }) => {
+const TodoList = (props) => {
   return (
     <div>
       <ul className="todoList">
-        {todos.map((todo) => (
+        {props.todos.map((todo) => (
           <Todo
             key={todo.id}
             todo={todo}
-            onDelete={() => {
-              deleteTodo(todo.id);
-            }}
-            onToggle={() => {
-              toggleTodo(todo.id);
-            }}
+            // onDelete={() => {
+            //   deleteTodo(todo.id);
+            // }}
+            toggleTodo={props.toggleTodo}
           />
         ))}
       </ul>

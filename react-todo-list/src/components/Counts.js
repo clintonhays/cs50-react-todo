@@ -1,6 +1,6 @@
 import React from "react";
 
-const Counts = () => {
+const Counts = ({ todos }) => {
   return (
     <div>
       <div className="totalTodos">

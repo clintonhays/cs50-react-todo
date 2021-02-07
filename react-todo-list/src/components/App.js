@@ -1,37 +1,45 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Counts from "./Counts";
 import AddForm from "./AddForm";
 import TodoList from "./TodoList";
+import { v4 as uuidv4 } from "uuid";
 import "../css/styles.css";
 
 const App = () => {
   const [todos, setTodos] = useState([]);
+
+  const addTodo = (text) => {
+    if (text === "") return;
+    setTodos((prevState) => {
+      return [...prevState, { id: uuidv4(), text: text, checked: false }];
+    });
+  };
+
+  const toggleTodo = (id) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id !== id) return todo;
+        else {
+          return { id: todo.id, text: todo.text, checked: !todo.checked };
+        }
+      })
+    );
+  };
 
   return (
     <div>
       <header>
         <h1>React Todo List</h1>
       </header>
-      <Counts />
+      <Counts todos={todos} />
       <AddForm addTodo={addTodo} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} toggleTodo={toggleTodo} />
     </div>
   );
 };
 
 // const deleteTodo = (id) => {
 //   setTodos(todos.filter((todo) => todo.id !== id));
-// };
-
-// const toggleTodo = (id) => {
-//   setTodos(
-//     todos.map((todo) => {
-//       if (todo.id !== id) return todo;
-//       else {
-//         return { id: todo.id, text: todo.text, checked: !todo.checked };
-//       }
-//     })
-//   );
 // };
 
 // const App = () => {

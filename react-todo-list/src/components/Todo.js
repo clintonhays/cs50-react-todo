@@ -1,12 +1,16 @@
 import React from "react";
+import Buttons from "./Buttons";
 
 const Todo = (props) => {
+  const toggleTodo = () => {
+    props.toggleTodo(props.todo.id);
+  };
+
   return (
     <li>
       <p>{props.todo.text}</p>
-      <button onClick={props.onToggle}>Finished</button>
-      <button onClick={props.onDelete}>Delete</button>
-      <input type="checkbox" onChange={props.onToggle} />
+      {/* <Buttons todos={props.todos} /> */}
+      <input type="checkbox" onChange={toggleTodo} />
     </li>
   );
 };
