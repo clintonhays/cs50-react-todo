@@ -6,14 +6,7 @@ const TodoList = (props) => {
     <div>
       <ul className="todoList">
         {props.todos.map((todo) => (
-          <Todo
-            key={todo.id}
-            todo={todo}
-            // onDelete={() => {
-            //   deleteTodo(todo.id);
-            // }}
-            toggleTodo={props.toggleTodo}
-          />
+          <Todo key={todo.id} todo={todo} deleteTodo={props.deleteTodo} toggleTodo={props.toggleTodo} />
         ))}
       </ul>
     </div>

@@ -26,6 +26,10 @@ const App = () => {
     );
   };
 
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
   return (
     <div>
       <header>
@@ -33,14 +37,10 @@ const App = () => {
       </header>
       <Counts todos={todos} />
       <AddForm addTodo={addTodo} />
-      <TodoList todos={todos} toggleTodo={toggleTodo} />
+      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </div>
   );
 };
-
-// const deleteTodo = (id) => {
-//   setTodos(todos.filter((todo) => todo.id !== id));
-// };
 
 // const App = () => {
 //   const [buttonText, setButtonText] = useState("yes");

@@ -6,10 +6,14 @@ const Todo = (props) => {
     props.toggleTodo(props.todo.id);
   };
 
+  const deleteTodo = () => {
+    props.deleteTodo(props.todo.id);
+  };
+
   return (
     <li>
       <p>{props.todo.text}</p>
-      {/* <Buttons todos={props.todos} /> */}
+      <Buttons todoId={props.todo.id} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
       <input type="checkbox" onChange={toggleTodo} />
     </li>
   );

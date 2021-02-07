@@ -1,12 +1,20 @@
-// import React from "react";
+import React from "react";
 
-// const Buttons = () => {
-//   return (
-//     <div>
-//       <button onClick={props.onToggle}>Finished</button>
-//       <button onClick={props.onDelete}>Delete</button>
-//     </div>
-//   );
-// };
+const Buttons = (props) => {
+  const toggleTodo = () => {
+    props.toggleTodo(props.id);
+  };
 
-// export default Buttons;
+  const deleteTodo = () => {
+    props.deleteTodo(props.id);
+  };
+
+  return (
+    <div>
+      <button onClick={toggleTodo}>Finished</button>
+      <button onClick={deleteTodo}>Delete</button>
+    </div>
+  );
+};
+
+export default Buttons;
