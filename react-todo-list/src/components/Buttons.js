@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Buttons = (props) => {
+  const [complete, setComplete] = useState(false);
+
+  const toggleComplete = () => {
+    setComplete(!complete);
+  };
+
   const toggleTodo = () => {
     props.toggleTodo(props.id);
   };
@@ -11,7 +17,14 @@ const Buttons = (props) => {
 
   return (
     <div>
-      <button onClick={toggleTodo}>Finished</button>
+      <button
+        onClick={() => {
+          toggleTodo();
+          toggleComplete();
+        }}
+      >
+        {complete ? "Complete" : "Inomplete"}
+      </button>
       <button onClick={deleteTodo}>Delete</button>
     </div>
   );
