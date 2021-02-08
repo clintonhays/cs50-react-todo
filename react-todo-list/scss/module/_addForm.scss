@@ -1,0 +1,45 @@
+// Add Form
+
+.formWrapper {
+  margin-bottom: 1.5em;
+}
+
+.inputLabel {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+#todoInput {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-bottom: 1.5em;
+
+  &:focus {
+    outline-color: violet;
+  }
+}
+
+.addTodo {
+  display: block;
+  width: 40%;
+  margin: 0 auto;
+  background-color: violet;
+  color: white;
+  font-size: 1.25em;
+
+  &:focus {
+    outline: none;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}

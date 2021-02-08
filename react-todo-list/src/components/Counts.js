@@ -2,9 +2,9 @@ import React from "react";
 
 const Counts = ({ todos }) => {
   return (
-    <div>
+    <div className="countContainer">
       <div className="totalTodos">
-        <h2>Items: {todos.length}</h2>
+        <h2>Tasks: {todos.length}</h2>
       </div>
       <div className="unfinishedTodos">
         <h2>

@@ -11,9 +11,11 @@ const AddForm = (props) => {
   };
 
   return (
-    <div>
+    <div className="formWrapper">
       <form onSubmit={addTodo}>
-        <label htmlFor="todoInput">What would you like to do?</label>
+        <label className="inputLabel" htmlFor="todoInput">
+          What would you like to do?
+        </label>
         <input type="text" name="todoInput" id="todoInput" placeholder="add your task" ref={todoInput} />
         <button className="addTodo" onClick={addTodo}>
           Add Todo

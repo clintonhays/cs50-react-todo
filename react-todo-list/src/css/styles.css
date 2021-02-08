@@ -14,7 +14,10 @@ body {
 
 button {
   border: none;
-  padding: 1em;
+  padding: 0.5em;
+  border-radius: 10px;
+  font-size: 1em;
+  text-align: center;
   cursor: pointer;
 }
 
@@ -25,5 +28,95 @@ h4,
 h5,
 h6 {
   font-size: 1em;
+}
+
+.header {
+  text-align: center;
+  font-size: 2em;
+}
+
+.countContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.5em;
+}
+
+.formWrapper {
+  margin-bottom: 1.5em;
+}
+
+.inputLabel {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+#todoInput {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-bottom: 1.5em;
+}
+
+#todoInput:focus {
+  outline-color: violet;
+}
+
+.addTodo {
+  display: block;
+  width: 40%;
+  margin: 0 auto;
+  background-color: violet;
+  color: white;
+  font-size: 1.25em;
+}
+
+.addTodo:focus {
+  outline: none;
+  transform: scale(1.1);
+}
+
+.addTodo:active {
+  transform: scale(0.9);
+}
+
+.todoList {
+  width: 85%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.todoItem {
+  list-style-type: none;
+  display: flex;
+  padding: 0 1em;
+  margin-bottom: 1.5em;
+  border-radius: 10px;
+  background-color: cyan;
+  box-shadow: 5px 5px 15px -8px rgba(0, 0, 0, 0.8);
+}
+
+.todoItem .todoText {
+  display: block;
+  height: 50%;
+  width: 80%;
+  margin: auto 0;
+  font-size: 1.5em;
+}
+
+.todoButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todoButtons button {
+  margin: 0.5em 0;
+  width: 6em;
 }
 /*# sourceMappingURL=styles.css.map */

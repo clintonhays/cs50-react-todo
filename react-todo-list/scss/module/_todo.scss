@@ -1,0 +1,20 @@
+// Todo Item
+
+.todoItem {
+  list-style-type: none;
+  display: flex;
+  // justify-content: space-around;
+  padding: 0 1em;
+  margin-bottom: 1.5em;
+  border-radius: 10px;
+  background-color: rgb(0, 255, 255);
+  box-shadow: 5px 5px 15px -8px rgba(0, 0, 0, 0.8);
+
+  .todoText {
+    display: block;
+    height: 50%;
+    width: 80%;
+    margin: auto 0;
+    font-size: 1.5em;
+  }
+}

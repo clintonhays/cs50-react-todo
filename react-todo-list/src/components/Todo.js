@@ -11,10 +11,10 @@ const Todo = (props) => {
   };
 
   return (
-    <li>
-      <p>{props.todo.text}</p>
+    <li className="todoItem">
+      <p className="todoText">{props.todo.text}</p>
       <Buttons todoId={props.todo.id} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
-      <input type="checkbox" onChange={toggleTodo} />
+      {/* <input type="checkbox" onChange={toggleTodo} /> */}
     </li>
   );
 };

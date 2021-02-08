@@ -32,7 +32,7 @@ const App = () => {
 
   return (
     <div>
-      <header>
+      <header className="header">
         <h1>React Todo List</h1>
       </header>
       <Counts todos={todos} />

@@ -16,14 +16,14 @@ const Buttons = (props) => {
   };
 
   return (
-    <div>
+    <div className="todoButtons">
       <button
         onClick={() => {
           toggleTodo();
           toggleComplete();
         }}
       >
-        {complete ? "Complete" : "Inomplete"}
+        {complete ? "Complete" : "Incomplete"}
       </button>
       <button onClick={deleteTodo}>Delete</button>
     </div>
