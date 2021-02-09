@@ -7,9 +7,12 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 100%;
-  background-color: #fffffa;
+  background: #090714;
+  background: linear-gradient(25deg, #090714 49%, #0e003a 100%);
+  color: white;
 }
 
 button {
@@ -59,20 +62,21 @@ h6 {
   margin: 0 auto;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
   margin-bottom: 1.5em;
+  color: white;
 }
 
 #todoInput:focus {
-  outline-color: violet;
+  outline-color: white;
 }
 
 .addTodo {
   display: block;
   width: 40%;
   margin: 0 auto;
-  background-color: violet;
-  color: white;
+  background-color: #ffffff;
+  color: #090714;
   font-size: 1.25em;
 }
 
@@ -96,9 +100,7 @@ h6 {
   display: flex;
   padding: 0 1em;
   margin-bottom: 1.5em;
-  border-radius: 10px;
-  background-color: cyan;
-  box-shadow: 5px 5px 15px -8px rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid white;
 }
 
 .todoItem .todoText {
@@ -115,8 +117,13 @@ h6 {
   align-items: center;
 }
 
-.todoButtons button {
+.todoButtons .completeButton,
+.todoButtons .deleteButton {
+  outline-color: white;
+  padding: 0;
   margin: 0.5em 0;
-  width: 6em;
+  background-color: transparent;
+  color: white;
+  font-size: 1.5em;
 }
 /*# sourceMappingURL=styles.css.map */

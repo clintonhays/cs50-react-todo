@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const Buttons = (props) => {
   const [complete, setComplete] = useState(false);
+  // const
 
   const toggleComplete = () => {
     setComplete(!complete);
@@ -18,14 +19,17 @@ const Buttons = (props) => {
   return (
     <div className="todoButtons">
       <button
+        className="completeButton"
         onClick={() => {
           toggleTodo();
           toggleComplete();
         }}
       >
-        {complete ? "Complete" : "Incomplete"}
+        {complete ? <i className="lni lni-checkmark-circle"></i> : <i className="lni lni-spiner-solid"></i>}
       </button>
-      <button onClick={deleteTodo}>Delete</button>
+      <button className="deleteButton" onClick={deleteTodo}>
+        <i className="lni lni-trash"></i>
+      </button>
     </div>
   );
 };

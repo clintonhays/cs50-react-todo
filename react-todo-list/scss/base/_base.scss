@@ -11,9 +11,12 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 100%;
-  background-color: rgb(255, 255, 250);
+  background: rgb(9, 7, 20);
+  background: linear-gradient(25deg, rgba(9, 7, 20, 1) 49%, rgb(14, 0, 58) 100%);
+  color: white;
 }
 
 // Buttons
