@@ -2,8 +2,9 @@
 
 .todoButtons {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+  width: 40%;
 
   .completeButton,
   .deleteButton {
@@ -12,6 +13,6 @@
     margin: 0.5em 0;
     background-color: transparent;
     color: white;
-    font-size: 1.5em;
+    font-size: 1.25em;
   }
 }

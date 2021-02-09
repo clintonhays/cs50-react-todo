@@ -108,13 +108,14 @@ h6 {
   height: 50%;
   width: 80%;
   margin: auto 0;
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 
 .todoButtons {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+  width: 40%;
 }
 
 .todoButtons .completeButton,
@@ -124,6 +125,6 @@ h6 {
   margin: 0.5em 0;
   background-color: transparent;
   color: white;
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 /*# sourceMappingURL=styles.css.map */
