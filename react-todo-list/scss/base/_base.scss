@@ -6,16 +6,24 @@
   box-sizing: border-box;
 }
 
+// HTML
+
+html {
+  height: 100%;
+}
+
 // Body
 
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 100%;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 100%;
   background: rgb(9, 7, 20);
   background: linear-gradient(25deg, rgba(9, 7, 20, 1) 49%, rgb(14, 0, 58) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: white;
 }
 
