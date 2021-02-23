@@ -9,6 +9,12 @@ const App = () => {
 	const [todos, setTodos] = useState([]);
 
 	useEffect(() => {
+		const savedTodos = localStorage.getItem("todos");
+
+		setTodos(JSON.parse(savedTodos));
+	}, []);
+
+	useEffect(() => {
 		localStorage.setItem("todos", JSON.stringify(todos));
 	}, [todos]);
 
