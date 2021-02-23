@@ -12,14 +12,14 @@ const Buttons = (props) => {
 	};
 
 	/**
-	 * Feeds todo id to toggleTodo() callback in App.js
+	 * Pass todo id to toggleTodo() callback in Todo.js
 	 */
 	const toggleTodo = () => {
 		props.toggleTodo(props.id);
 	};
 
 	/**
-	 * Feeds todo id to deleteTodo() callback in App.js
+	 * Pass todo id to deleteTodo() callback in Todo.js
 	 */
 	const deleteTodo = () => {
 		props.deleteTodo(props.id);
